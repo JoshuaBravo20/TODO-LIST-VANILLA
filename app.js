@@ -6,8 +6,7 @@ let allTasks = 0;
 taskCounter.innerHTML = allTasks + " tasks pending";
 
 function addTask(value) {
-
-  taskLabel.value = '';
+  taskLabel.value = "";
   // Definir nuevo elemento, darle sus clases
   let newTask = document.createElement("li");
   newTask.classList.add(
@@ -20,8 +19,8 @@ function addTask(value) {
   let deleteBtn = document.createElement("button");
   deleteBtn.classList.add("btn", "btn-link", "float-right");
 
-  let trashCan = document.createElement('i');
-  trashCan.classList.add('fas', 'fa-trash-alt');
+  let trashCan = document.createElement("i");
+  trashCan.classList.add("fas", "fa-trash-alt");
 
   sampleTask.style = "display: none";
   //El contenido es igual al input del usuario
@@ -30,7 +29,7 @@ function addTask(value) {
   box.appendChild(newTask);
   newTask.appendChild(deleteBtn);
   deleteBtn.appendChild(trashCan);
-  trashCan.style.color = 'red';
+  trashCan.style.color = "red";
 
   if (value === "") {
     box.removeChild(newTask);
@@ -40,10 +39,14 @@ function addTask(value) {
     taskCounter.innerHTML = allTasks + " tasks pending";
   }
 
-  deleteBtn.addEventListener('click', function() {
-    newTask.parentNode.removeChild(newTask);
-    allTasks--;
-    taskCounter.innerHTML = allTasks + " tasks pending";
-  });
+  deleteBtn.addEventListener("click", function () {
+    newTask.classList.remove("animate__backInDown");
+    newTask.classList.add("animate__backOutRight");
 
+    newTask.addEventListener("animationend", () => {
+      newTask.parentNode.removeChild(newTask);
+      allTasks--;
+      taskCounter.innerHTML = allTasks + " tasks pending";
+    });
+  });
 }
