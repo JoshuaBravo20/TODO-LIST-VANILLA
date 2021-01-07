@@ -6,6 +6,8 @@ let allTasks = 0;
 taskCounter.innerHTML = allTasks + " tasks pending";
 
 function addTask(value) {
+
+  taskLabel.value = '';
   // Definir nuevo elemento, darle sus clases
   let newTask = document.createElement("li");
   newTask.classList.add(
@@ -45,5 +47,3 @@ function addTask(value) {
   });
 
 }
-
-
