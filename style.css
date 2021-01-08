@@ -45,7 +45,7 @@ body {
 }
 
 #newbie {
-  color: orangered;
+  color: rgb(18, 212, 34);
   font-size: 20px;
 }
 
@@ -63,4 +63,8 @@ body {
   -webkit-box-shadow: 3px 7px 5px 2px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 3px 7px 5px 2px rgba(0, 0, 0, 0.1);
   box-shadow: 3px 7px 5px 2px rgba(0, 0, 0, 0.1);
+}
+
+.bg-red {
+  background-color: rgb(219, 108, 108) !important;
 }
